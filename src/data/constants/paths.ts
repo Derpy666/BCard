@@ -1,5 +1,5 @@
 // ** Paths ** //
-const base: string = 'https://monkfish-app-z9uza.ondigitalocean.app/bcard2';
+const base: string = 'https://bcard-api.onrender.com';
 const users = base + '/users';
 const cards = base + '/cards';
 

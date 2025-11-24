@@ -11,7 +11,7 @@ export const EmailSchema = Joi.object({
 
 export const PasswordSchema = (key: string) => Joi.object({
     [key]: Joi.string()
-        .min(9)
+        .min(7)
         .ruleset.regex(passwordRegex)
         .rule({
             message: "password must contain at least one uppercase letter, one lowercase letter, one number and one special character"
