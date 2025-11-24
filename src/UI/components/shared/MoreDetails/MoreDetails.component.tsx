@@ -4,7 +4,6 @@ import { ICard } from "../../../../data/types/ICard";
 import { IUser } from "../../../../data/types/IUser";
 import Flex from "../Flex/Flex.component";
 import Styles from "./MoreDetails.style";
-import AreYouSureModal from "../../../modals/AreYouSureModal/AreYouSure.modal";
 import { useEffect, useState, MouseEvent } from "react";
 import { toast } from "react-toastify";
 import { paths } from "../../../../data/constants/paths";
@@ -138,20 +137,6 @@ const MoreDetails = (props: MoreDetailsProps) => {
         </Flex>
       </Flex>
 
-      <AreYouSureModal
-        isOpen={isDeleteOpen}
-        setIsOpen={setIsDeleteOpen}
-        title={qTitle}
-        question={qBody}
-        onYes={handleDelete}
-      />
-      <AreYouSureModal
-        isOpen={isEditOpen}
-        setIsOpen={setIsEditOpen}
-        title={qTitle}
-        question={qBody}
-        onYes={handleEdit}
-      />
       <FormModal
         isOpen={isEditCardOpen}
         setIsOpen={setIsEditCardOpen}
