@@ -73,7 +73,7 @@ const Biz = () => {
           <p className={Styles.paragraph}>
             Phone:{" "}
             <span id="tel" className={Styles.link} onClick={open}>
-              {card.web}
+              {card.phone}
             </span>
           </p>
           <p className={Styles.paragraph}>
