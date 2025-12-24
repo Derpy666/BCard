@@ -28,7 +28,21 @@ export const PhoneSchema = Joi.object({
             message: "phone number must be a valid israeli phone number"
         })
         .required()
-});
+}).unknown(true);
+
+export const HouseNumSchema = Joi.object({
+    houseNumber: Joi.number()
+      .min(1)
+      .required()
+      .messages({ "number.min": "house number must be above 0" })
+  }).unknown(true);
+
+  export const ZipSchema = Joi.object({
+    zip: Joi.number()
+      .min(1000)
+      .required()
+      .messages({ "number.min": "zip number must be above 1000" })
+  }).unknown(true);
 
 export const UrlSchema = (key: string) => Joi.object({
     [key]: Joi.string()

@@ -12,7 +12,7 @@ export type IUser = {
         url?: string;
         alt?: string;
     };
-    address: {
+    address: { 
         country: string;
         state?: string;
         city: string;

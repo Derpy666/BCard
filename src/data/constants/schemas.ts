@@ -3,6 +3,8 @@ import {
     UrlSchema,
     PasswordSchema,
     PhoneSchema,
+    HouseNumSchema,
+    ZipSchema,
     StringSchema,
     StringAlloWSchema,
     IntegerSchema
@@ -25,8 +27,8 @@ export const schemas = {
         imageAlt: StringAlloWSchema("imageAlt"),
         city: StringSchema("city"),
         country: StringSchema("country"),
-        zip: IntegerSchema("zip"),
-        houseNumber: IntegerSchema("houseNumber"),
+        zip: ZipSchema,
+        houseNumber: HouseNumSchema,
         state: StringAlloWSchema("state"),
         street: StringSchema("street")
     },
@@ -41,8 +43,8 @@ export const schemas = {
         imageAlt: StringAlloWSchema("imageAlt"),
         city: StringSchema("city"),
         country: StringSchema("country"),
-        zip: IntegerSchema("zip"),
-        houseNumber: IntegerSchema("houseNumber"),
+        zip: ZipSchema,
+        houseNumber: HouseNumSchema,
         state: StringAlloWSchema("state"),
         street: StringSchema("street")
     },
@@ -55,8 +57,8 @@ export const schemas = {
         imageAlt: StringAlloWSchema("imageAlt"),
         city: StringSchema("city"),
         country: StringSchema("country"),
-        zip: IntegerSchema("zip"),
-        houseNumber: IntegerSchema("houseNumber"),
+        zip: ZipSchema,
+        houseNumber: HouseNumSchema,
         state: StringAlloWSchema("state"),
         street: StringSchema("street")
     }
