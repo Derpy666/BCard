@@ -28,12 +28,19 @@ const EditProfileForm = (props: EditProfileProps) => {
 
   const onEdit = async () => {
     setIsLoading(true);
-    const normalized = { ...normalizeEditProfile(form) };
-    await updateUser(normalized).then((res) => {
-      setIsLoading(false);
-      setIsOpen(false);
-      setUser(res);
+  
+    const normalized = normalizeEditProfile(form);
+  
+    const res = await updateUser(normalized);
+  
+    setUser({
+      ...user,
+      ...res.normalizedUser,
+      _id: res.userId,
     });
+  
+    setIsLoading(false);
+    setIsOpen(false);
   };
 
   const getdefaultValue = (key: string) => {

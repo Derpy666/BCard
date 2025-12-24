@@ -22,7 +22,7 @@ const useAPI = () => {
             setError(err as Error);
             console.log(err);
             
-            toast(`${`Error!!!`}\n\n${err}`, { type: "error" });
+            return toast(`${`Error!!!`}\n\n${err}`, { type: "error" });
         } finally {
             setLoading(false);
         }

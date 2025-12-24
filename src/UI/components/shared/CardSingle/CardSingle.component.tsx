@@ -54,7 +54,9 @@ const CardSingle = ({ card, getData, cardsDeckRef }: CardSingleProps) => {
       getData();
       if (card.likes.includes(auth.id)) {
         card.likes = card.likes.filter((id) => id !== auth.id);
-      } else card.likes.push(auth.id);
+      } else {
+        card.likes.push(auth.id);
+      }
     }
   };
 
@@ -125,7 +127,7 @@ const CardSingle = ({ card, getData, cardsDeckRef }: CardSingleProps) => {
               onClick={handleCall}
             />
             {auth.isLoggedIn && heart}
-            {auth.authLevel > 1 && auth.id === card.user_id && (
+            {auth.authLevel > 1 && (auth.id === card.user_id || auth.authLevel == 3) && (
               <>
                 <PiPencil
                   size={iconsSize}

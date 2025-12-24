@@ -27,8 +27,6 @@ const EditCardForm = (props: EditCardFormProps) => {
   const { updateCard, loadCards, loading } = useCards(cardsDeckRef!);
 
   const onUpdateCard = async () => {
-    console.log(form);
-
     setIsLoading(true);
     await updateCard({ ...(form as ICard), _id: card._id }).then(async () => {
       setIsOpen(false);

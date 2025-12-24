@@ -21,13 +21,13 @@ const useAuth = () => {
         const authLevel = getAuthLevel(decodedToken);
         const user = await getUserById(decodedToken._id) as IUser;
         dispatch(authActions.login({ id: decodedToken._id, authLevel: authLevel, img: user.image }));
+        toast("Logged in successfully", { type: "success" })
     }, [dispatch]);
 
     const tryLogin = useCallback(async (credentials: Record<string, string>) => {
         const token = await sendApiRequest(`${paths.login}`, HttpMethods.POST, credentials);
         setToken(token);
         login(token);
-        toast("Logged in successfully", { type: "success" });
     }, [sendApiRequest, login]);
 
     const register = useCallback(async (user: IUser) => {

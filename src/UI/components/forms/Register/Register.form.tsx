@@ -49,7 +49,6 @@ const RegisterForm = (props: RegisterFormProps) => {
               items={FlexTypes.Start}
             >
               {section.map((input, innerIndex) => {
-                console.log(input);
 
                 return (
                   <Flex key={innerIndex} className={Styles.section}>

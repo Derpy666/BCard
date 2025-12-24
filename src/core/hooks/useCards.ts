@@ -51,6 +51,7 @@ const useCards = (cardsDeck?: MutableRefObject<ICard[]>, reRender?: boolean) => 
     }, [getData, getCardsDeck]);
 
     const addCard = async (card: ICard) => {
+        card.user_id = auth.id
         const res = await sendApiRequest(
             paths.cards,
             HttpMethods.POST,

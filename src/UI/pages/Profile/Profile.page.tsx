@@ -30,6 +30,8 @@ const Profile = () => {
   };
 
   useEffect(() => {
+    if (!userId || user) return;
+  
     (async () => {
       const fetchedUser = await getUserById(userId);
       setUser(fetchedUser);
@@ -43,7 +45,7 @@ const Profile = () => {
         justify={FlexTypes.Start}
         className={Styles.container}
       >
-        <h1 className={Styles.title}>Profile</h1>
+        <h1 className={Styles.title}>Profile {user?._id}</h1>
         {user && (
           <Flex
             dir={FlexDirs.Column}
